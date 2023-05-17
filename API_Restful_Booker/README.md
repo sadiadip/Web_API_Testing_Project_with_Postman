@@ -1,4 +1,4 @@
-##[@SwaggerHb] (https://app.swaggerhub.com/apis/codecrafting/nabati-eds/v1#/auth)
+##[@Restful_Booker] (https://restful-booker.herokuapp.com/apidoc/index.html)
 <table class="GeneratedTable">
   <thead>
     <tr>
