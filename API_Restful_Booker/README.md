@@ -3,8 +3,6 @@
     <tr>
       <th>Summary Item</th>
       <th>Total</th>
-      <th></th>
-      <th>Total</th>
       <th>Failed</th>
     </tr>
   </thead>
