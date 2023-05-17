@@ -2,13 +2,13 @@
   <thead>
     <tr>
       <th></th>
-      <th>executed</th>
-      <th>failed</th>
+      <th>Total</th>
+      <th>Failed</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>iterations</td>
+      <td>Iterations</td>
       <td>1</td>
       <td>0</td>
     </tr>
