@@ -1,3 +1,5 @@
+##[@SwaggerHub] (https://app.swaggerhub.com/apis/codecrafting/nabati-eds/v1#/auth)
+
 <table class="GeneratedTable">
   <thead>
     <tr>
