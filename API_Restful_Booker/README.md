@@ -13,22 +13,22 @@
       <td>0</td>
     </tr>
     <tr>
-      <td>requests</td>
+      <td>Requests</td>
       <td>6</td>
       <td>0</td>
     </tr>
     <tr>
-      <td>test-scripts</td>
+      <td>Test-scripts</td>
       <td>6</td>
       <td>0</td>
     </tr>
     <tr>
-      <td>prerequest-scripts</td>
+      <td>Prerequest-scripts</td>
       <td>0</td>
       <td>0</td>
     </tr>
     <tr>
-      <td>assertions</td>
+      <td>Assertions</td>
       <td>9</td>
       <td>0</td>
     </tr>
