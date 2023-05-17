@@ -1,4 +1,5 @@
 ##[@SwaggerHub_PetStore] (https://petstore.swagger.io/#/user)
+##SUMMARY
 
 <table class="GeneratedTable">
   <thead>
