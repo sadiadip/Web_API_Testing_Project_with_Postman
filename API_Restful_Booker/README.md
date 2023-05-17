@@ -2,6 +2,7 @@
   <thead>
     <tr>
       <th></th>
+      <th>Summary Item</th>
       <th>Total</th>
       <th>Failed</th>
     </tr>
