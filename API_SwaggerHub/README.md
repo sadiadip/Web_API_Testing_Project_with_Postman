@@ -1,4 +1,5 @@
-##[@SwaggerHub] (https://app.swaggerhub.com/apis/codecrafting/nabati-eds/v1#/auth)
+##[@SwaggerHub] (https://app.swaggerhub.com/apis/codecrafting/nabati-eds/v1#/auth) <br>
+#SUMMARY
 
 <table class="GeneratedTable">
   <thead>
