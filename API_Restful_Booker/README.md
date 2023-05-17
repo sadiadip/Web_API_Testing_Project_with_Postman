@@ -29,7 +29,7 @@
     </tr>
     <tr>
       <td>Assertions</td>
-      <td>9</td>
+      <td>11</td>
       <td>0</td>
     </tr>
   </tbody>
