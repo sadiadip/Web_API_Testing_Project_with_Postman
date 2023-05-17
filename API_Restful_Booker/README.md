@@ -1,8 +1,8 @@
 <table class="GeneratedTable">
   <thead>
     <tr>
-      <th></th>
       <th>Summary Item</th>
+      <th></th>
       <th>Total</th>
       <th>Failed</th>
     </tr>
