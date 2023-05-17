@@ -34,3 +34,7 @@
     </tr>
   </tbody>
 </table>
+
+ Total run duration: 3.5s
+ Total data received: 584B
+ Average response time: 500ms
