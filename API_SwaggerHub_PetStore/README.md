@@ -22,7 +22,7 @@
     </tr>
     <tr>
       <td>Test-scripts</td>
-      <td>6</td>
+      <td>7</td>
       <td>0</td>
     </tr>
     <tr>
