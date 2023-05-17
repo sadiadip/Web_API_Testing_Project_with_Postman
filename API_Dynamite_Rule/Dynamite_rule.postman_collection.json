@@ -1,0 +1,401 @@
+{
+	"info": {
+		"_postman_id": "52bb8c0e-c7fe-481b-9131-53dce1bd120a",
+		"name": "Dynamite_rule",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27307648"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const responseJson=pm.response.json();\r",
+							"pm.environment.set(\"Token1\",responseJson.token);\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"code\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Dynamite}}/login?email=sadia@gmail.com&password=1234",
+					"host": [
+						"{{Dynamite}}"
+					],
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "sadia@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "1234"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh_token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 1500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Dynamite}}/refresh_token",
+					"host": [
+						"{{Dynamite}}"
+					],
+					"path": [
+						"refresh_token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{Dynamite}}/logout",
+					"host": [
+						"{{Dynamite}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new rule",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const responseJson=pm.response.json();\r",
+							"pm.environment.set(\"id\",responseJson.id);\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token1}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"max\",\r\n  \"status\": \"disabled\",\r\n  \"frequency\": \"* 10 * * *\",\r\n  \"delete_only_source_files\": true,\r\n  \"conditions\": [\r\n    {\r\n      \"attribute\": \"xx\",\r\n      \"operator\": \"contains\",\r\n      \"value\": \"asset id\"\r\n    },\r\n    {\r\n      \"attribute\": \"title\",\r\n      \"operator\": \"is_not\",\r\n      \"value\": \"asset title\"\r\n    },\r\n    {\r\n      \"attribute\": \"category\",\r\n      \"operator\": \"starts_with\",\r\n      \"value\": \"asset category\"\r\n    },\r\n    {\r\n      \"attribute\": \"type\",\r\n      \"operator\": \"in\",\r\n      \"value\": \"asset type\"\r\n    },\r\n    {\r\n      \"attribute\": \"ingestion\",\r\n      \"operator\": \"starts_with\",\r\n      \"value\": \"asset ingestion time\"\r\n    },\r\n    {\r\n      \"attribute\": \"last_scheduled_at\",\r\n      \"operator\": \"before_date\",\r\n      \"value\": \"asset last_scheduled_at\"\r\n    },\r\n    {\r\n      \"attribute\": \"license_start_time\",\r\n      \"operator\": \"before_days\",\r\n      \"value\": \"asset license_start_time\"\r\n    },\r\n    {\r\n      \"attribute\": \"license_end_time\",\r\n      \"operator\": \"after_date\",\r\n      \"value\": \"asset license_end_time\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Dynamite}}/api/v1/rules?customer_domain=dip&customer_account=dipwe",
+					"host": [
+						"{{Dynamite}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"rules"
+					],
+					"query": [
+						{
+							"key": "customer_domain",
+							"value": "dip"
+						},
+						{
+							"key": "customer_account",
+							"value": "dipwe"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all rules",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token1}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Dynamite}}/api/v1/rules",
+					"host": [
+						"{{Dynamite}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"rules"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get rules by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token1}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Dynamite}}/api/v1/rules/{{id}}",
+					"host": [
+						"{{Dynamite}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"rules",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update existing rule",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"status\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token1}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"98b5dd8b-e75d-4170-8d1b-0f9654b569a9\",\r\n  \"name\": \"Rule to delete all Serie A files\",\r\n  \"status\": \"disabled\",\r\n  \"frequency\": \"manual\",\r\n  \"delete_only_source_files\": true,\r\n  \"conditions\": [\r\n    {\r\n      \"attribute\": \"title\",\r\n      \"operator\": \"is_not\",\r\n      \"value\": \"asset title\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Dynamite}}/api/v1/rules/{{id}}",
+					"host": [
+						"{{Dynamite}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"rules",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove existing rule",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token1}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{Dynamite}}/api/v1/rules/{{id}}",
+					"host": [
+						"{{Dynamite}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"rules",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
