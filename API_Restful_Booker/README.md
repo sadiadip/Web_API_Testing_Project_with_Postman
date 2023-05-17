@@ -36,5 +36,5 @@
 </table>
 
  Total run duration: 3.5s <br>
- Total data received: 584B
+ Total data received: 584B   <br>
  Average response time: 500ms
