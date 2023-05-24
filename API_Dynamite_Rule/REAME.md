@@ -1,4 +1,4 @@
-##[@Dynamite_Rule] (https://app.swaggerhub.com/apis/gvaibhav1734/dynamite-2.0/1.0.0) <br>
+##[@Dynamite_Rule](https://app.swaggerhub.com/apis/gvaibhav1734/dynamite-2.0/1.0.0) <br>
 ##SUMMARY
 <table class="GeneratedTable">
   <thead>
