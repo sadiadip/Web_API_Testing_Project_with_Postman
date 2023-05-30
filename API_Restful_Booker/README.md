@@ -1,4 +1,4 @@
-##[@Restful_Booker] (https://restful-booker.herokuapp.com/apidoc/index.html) <br>
+##[@Restful_Booker](https://restful-booker.herokuapp.com/apidoc/index.html) <br>
 ##SUMMARY
 <table class="GeneratedTable">
   <thead>
