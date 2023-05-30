@@ -1,4 +1,4 @@
-##[@SwaggerHub_Alta_Store] (https://app.swaggerhub.com/apis/codecrafting/nabati-eds/v1#/auth) <br>
+##[@SwaggerHub_Alta_Store](https://app.swaggerhub.com/apis/codecrafting/nabati-eds/v1#/auth) <br>
 #SUMMARY
 
 <table class="GeneratedTable">
