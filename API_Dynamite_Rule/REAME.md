@@ -2,7 +2,7 @@
 ##SUMMARY
 <table class="GeneratedTable">
   <thead>
-    <tr>
+    <tr> 
       <th>Summary Item</th>
       <th>Total</th>
       <th>Failed</th>
